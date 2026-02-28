@@ -8,7 +8,10 @@ import Accordion from "./modules/accordion.js";
 const accordion = new Accordion('[data-anime="accordion"] dt');
 accordion.init();
 
-import initTabNav from "./modules/tab-nav.js";
+import TabNav from "./modules/tab-nav.js";
+const tabNav = new TabNav('[data-tab="menu"] li', '[data-tab="content"] section');
+tabNav.init();
+
 import initModal from "./modules/modal.js";
 import initTooltip from "./modules/tooltip.js";
 import initDropdownMenu from "./modules/dropdown-menu.js";
@@ -19,7 +22,6 @@ import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
 
 initAnimationScroll();
-initTabNav();
 initModal();
 initTooltip();
 initDropdownMenu();
