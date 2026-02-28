@@ -1,4 +1,7 @@
-import initScrollSuave from "./modules/scroll-suave.js";
+import ScrollSuave from "./modules/scroll-suave.js";
+const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
+scrollSuave.init();
+
 import initAnimationScroll from "./modules/anima-scroll.js";
 import initAccordion from "./modules/accordion.js";
 import initTabNav from "./modules/tab-nav.js";
@@ -10,7 +13,7 @@ import initFuncionamento from "./modules/funcionamento.js";
 import initFetchAnimais from "./modules/fetch-animais.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
-initScrollSuave();
+
 initAnimationScroll();
 initAccordion();
 initTabNav();
@@ -23,15 +26,17 @@ initFuncionamento();
 initFetchAnimais();
 initFetchBitcoin();
 
+
+// --- FORMULÁRIO ---
 //Nome que muda em tempo real
 const contatoNome = document.forms[0].nome;
 const nomeInput = document.querySelector("#nomeInput");
-
 function handleKeyUp(event) {
   const nomeInputValue = event.target.value;
   nomeInput.innerText = nomeInputValue;
 }
 contatoNome.addEventListener("keyup", handleKeyUp);
+
 
 //Verificação se o email é válido
 const contatoEmail = document.forms[0].email;
@@ -51,6 +56,7 @@ function verificaEmail(event) {
 
 contatoEmail.addEventListener("change", verificaEmail);
 
+
 //Mudança de cor do background com Select
 const formularioCor = document.forms.contato.cores;
 const backgroundModal = document.querySelector(".modal");
@@ -59,8 +65,8 @@ function alteraCor(event) {
   const target = event.target.value;
   backgroundModal.style.backgroundColor = target;
 }
-
 formularioCor.addEventListener("change", alteraCor);
+
 
 //Mudança de cor do texto
 const formularioCorTexto = document.forms.contato.corTexto;
@@ -72,6 +78,7 @@ function alteraCorTexto(event) {
 }
 formularioCorTexto.addEventListener("change", alteraCorTexto);
 
+
 //Mudança de tamanho do texto
 const formularioTamanhoTexto = document.forms.contato.tamanhoTexto;
 
@@ -81,6 +88,7 @@ function alteraTamanhoTexto(event) {
 }
 formularioTamanhoTexto.addEventListener("change", alteraTamanhoTexto);
 
+
 //Pegando todos os valores
 const contato = document.querySelector(".modal");
 const dados = {};
@@ -89,5 +97,4 @@ function coletaDados(event) {
   dados[event.target.name] = event.target.value;
   console.log(dados);
 }
-
 contato.addEventListener("change", coletaDados);
