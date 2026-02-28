@@ -1,0 +1,22 @@
+[data-semana] {
+  display: flex;
+  align-items: center;
+}
+
+[data-semana]::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  margin-left: 4px;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+[data-semana].funcionamento-aberto::after {
+  background: green;
+}
+
+[data-semana].funcionamento-fechado::after {
+  background-color: red;
+}
