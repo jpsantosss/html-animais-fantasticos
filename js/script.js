@@ -12,7 +12,11 @@ import TabNav from "./modules/tab-nav.js";
 const tabNav = new TabNav('[data-tab="menu"] li', '[data-tab="content"] section');
 tabNav.init();
 
-import initModal from "./modules/modal.js";
+import Modal from "./modules/modal.js";
+const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]');
+modal.init();
+
+
 import initTooltip from "./modules/tooltip.js";
 import initDropdownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
@@ -22,7 +26,6 @@ import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
 
 initAnimationScroll();
-initModal();
 initTooltip();
 initDropdownMenu();
 // changeBgColor();
