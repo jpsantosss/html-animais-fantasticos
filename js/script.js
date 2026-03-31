@@ -17,7 +17,10 @@ const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-
 modal.init();
 
 
-import initTooltip from "./modules/tooltip.js";
+import Tooltip from "./modules/tooltip.js";
+const tooltip = new Tooltip('[data-tooltip]');
+tooltip.init();
+
 import initDropdownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
@@ -26,7 +29,6 @@ import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
 
 initAnimationScroll();
-initTooltip();
 initDropdownMenu();
 // changeBgColor();
 initMenuMobile();
