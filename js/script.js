@@ -21,10 +21,13 @@ import Tooltip from "./modules/tooltip.js";
 const tooltip = new Tooltip('[data-tooltip]');
 tooltip.init();
 
+import fetchAnimais from "./modules/fetch-animais.js";
+fetchAnimais("../../animaisapi.json", ".numeros-grid");
+
+
 import initDropdownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
-import initFetchAnimais from "./modules/fetch-animais.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
 
@@ -33,7 +36,6 @@ initDropdownMenu();
 // changeBgColor();
 initMenuMobile();
 initFuncionamento();
-initFetchAnimais();
 initFetchBitcoin();
 
 
