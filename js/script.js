@@ -24,11 +24,12 @@ tooltip.init();
 import fetchAnimais from "./modules/fetch-animais.js";
 fetchAnimais("../../animaisapi.json", ".numeros-grid");
 
+import fetchBitcoin from "./modules/fetch-bitcoin.js";
+fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
 
 import initDropdownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
-import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
 
 initAnimationScroll();
