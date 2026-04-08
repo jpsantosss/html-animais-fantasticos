@@ -3,7 +3,7 @@ const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
 
 import ScrollAnima from "./modules/scroll-anima.js";
-const scrollAnima = new ScrollAnima();
+const scrollAnima = new ScrollAnima('[data-anime="scroll"]');
 scrollAnima.init();
 
 import Accordion from "./modules/accordion.js";
