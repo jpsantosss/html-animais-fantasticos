@@ -2,7 +2,9 @@ import ScrollSuave from "./modules/scroll-suave.js";
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
 
-import initAnimationScroll from "./modules/anima-scroll.js";
+import ScrollAnima from "./modules/scroll-anima.js";
+const scrollAnima = new ScrollAnima('[data-anime="scroll"]');
+scrollAnima.init();
 
 import Accordion from "./modules/accordion.js";
 const accordion = new Accordion('[data-anime="accordion"] dt');
@@ -32,7 +34,6 @@ import initMenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
 
 
-initAnimationScroll();
 initDropdownMenu();
 // changeBgColor();
 initMenuMobile();
