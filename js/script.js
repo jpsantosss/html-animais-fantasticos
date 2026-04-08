@@ -38,7 +38,6 @@ initDropdownMenu();
 // changeBgColor();
 initMenuMobile();
 initFuncionamento();
-initFetchBitcoin();
 
 
 // --- FORMULÁRIO ---
