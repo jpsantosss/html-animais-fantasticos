@@ -9,7 +9,7 @@ export default class DropdownMenu {
     } else {
       this.events = events;
     }
-    this.activeDropdownMenu = this.dropdownMenus.bind(this);
+    this.activeDropdownMenu = this.activeDropdownMenu.bind(this);
   }
 
   //Nesse código estou usando uma array que contém dois tipos de eventos 'touchstart' que
