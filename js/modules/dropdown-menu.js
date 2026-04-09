@@ -1,13 +1,17 @@
 import outsideClick from "./outsideclick.js";
 
-export default function initDropdownMenu() {
-  const dropdownMenus = document.querySelectorAll("[data-dropdown]");
+export default class DropdownMenu {
+  constructor(dropdownMenus, events) {
+    this.dropdownMenus = document.querySelectorAll(dropdownMenus);
+    this.activeClass = "active";
+    if (this.events === undefined) {
+      this.events = ["touchstart", "click"];
+    } else {
+      this.events = events;
+    }
+    this.activeDropdownMenu = this.dropdownMenus.bind(this);
+  }
 
-  dropdownMenus.forEach((item) => {
-    ["touchstart", "click"].forEach((userEvent) => {
-      item.addEventListener(userEvent, handleClick);
-    });
-  });
   //Nesse código estou usando uma array que contém dois tipos de eventos 'touchstart' que
   //é melhor para o Mobile, pois o tempo de resposta é mais rápido e o 'click' que também
   //funciona para Mobile, mas faz mais sentido para o clique do mouse.
@@ -16,12 +20,28 @@ export default function initDropdownMenu() {
   //adiciona o EventListener para ativar a função handleClick
 
   //Função handleClick
-  function handleClick(event) {
+  activeDropdownMenu(event) {
     event.preventDefault(); //Previnimos o padrão para que ele não abra o link de href
-    this.classList.add("active"); //Adiciona a classe ativo
-    outsideClick(this, ["touchstart", "click"], () => {
-      this.classList.remove("active");
+    const element = event.currentTarget;
+    element.classList.add(this.activeClass); //Adiciona a classe ativo
+    outsideClick(element, this.events, () => {
+      element.classList.remove("active");
     });
+  }
+
+  addDropdownMenusEvent() {
+    this.dropdownMenus.forEach((item) => {
+      this.events.forEach((userEvent) => {
+        item.addEventListener(userEvent, this.activeDropdownMenu);
+      });
+    });
+  }
+
+  init() {
+    if (this.dropdownMenus.length) {
+      this.addDropdownMenusEvent();
+    }
+    return this;
   }
 }
 
