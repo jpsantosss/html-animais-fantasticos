@@ -29,12 +29,15 @@ fetchAnimais("../../animaisapi.json", ".numeros-grid");
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
 
-import initDropdownMenu from "./modules/dropdown-menu.js";
+import DropdownMenu from "./modules/dropdown-menu.js";
+const dropdownMenu = new DropdownMenu('[data-dropdown]');
+dropdownMenu.init();
+
+
 import initMenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
 
 
-initDropdownMenu();
 // changeBgColor();
 initMenuMobile();
 initFuncionamento();
