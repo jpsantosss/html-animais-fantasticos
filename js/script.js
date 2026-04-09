@@ -39,11 +39,12 @@ const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
 menuMobile.init();
 
 
-import initFuncionamento from "./modules/funcionamento.js";
+import Funcionamento from "./modules/funcionamento.js";
+const funcionamento = new Funcionamento("[data-semana]", "funcionamento-aberto", "funcionamento-fechado");
+funcionamento.init();
 
 
 // changeBgColor();
-initFuncionamento();
 
 
 // --- FORMULÁRIO ---
