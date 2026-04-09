@@ -24,7 +24,7 @@ const tooltip = new Tooltip('[data-tooltip]');
 tooltip.init();
 
 import fetchAnimais from "./modules/fetch-animais.js";
-fetchAnimais("../../animaisapi.json", ".numeros-grid");
+fetchAnimais("./animaisapi.json", ".numeros-grid");
 
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
